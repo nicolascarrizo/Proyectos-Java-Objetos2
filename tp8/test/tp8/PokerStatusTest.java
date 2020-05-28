@@ -1,11 +1,13 @@
 package tp8;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.mock.MockCreationSettings;
 
 class PokerStatusTest {
 	
@@ -34,6 +36,7 @@ class PokerStatusTest {
 	Jugada jugadaColor;
 	Jugada jugadaTrio;
 	Jugada jugadaNada;
+	Jugada jugadaMock;
 	
 	
 	//setUp
@@ -128,5 +131,32 @@ class PokerStatusTest {
 		assertEquals(jugadaColor, mano.jugadaGanadora(jugadaColor, jugadaTrio));
 		
 	}
+	
+	//Usando mockito
+	
+	//Ver si hay una mano que es color 
+	
+	@Test
+	public void jugadorGanadorTestMockito(){
+		
+		// DOC
+		Carta cartaT8 = mock(Carta.class);
+		Carta cartaQ8 = mock(Carta.class);
+		Carta cartaK8 = mock(Carta.class);
+		Carta cartaK1 = mock(Carta.class);
+		Carta cartaL2 = mock(Carta.class);
+		
+		when(cartaT8.getValor()).thenReturn(8);
+		when(cartaQ8.getValor()).thenReturn(8);
+		when(cartaK8.getValor()).thenReturn(8);
+		when(cartaK1.getValor()).thenReturn(1);
+		when(cartaL2.getValor()).thenReturn(2);
+		
+		jugadaMock = new Jugada(cartaT8, cartaQ8, cartaK8, cartaK1, cartaL2);
+		
+		assertEquals("Trio", mano.verificar(jugadaMock.getCartas()));
+						
+	}
+	
 	
 }
