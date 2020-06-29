@@ -8,6 +8,7 @@ public class EmpleadoPasante extends Empleado{
 		// TODO Auto-generated constructor stub
 	}
 
+	//metodo concreto
 	@Override
 	public Integer sueldo() {
 		// TODO Auto-generated method stub

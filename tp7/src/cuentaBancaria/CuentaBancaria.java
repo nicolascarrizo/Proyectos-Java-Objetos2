@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class CuentaBancaria {
+	// operaqciones primitivas
 	private String titular;
 	private int saldo;
 	private List<String> movimientos;
@@ -30,11 +31,16 @@ public abstract class CuentaBancaria {
 		 this.movimientos.add(movimiento);
 	}
 	
-	public void hacerMovimiento(CuentaBancaria cuenta, int monto) {
-		cuenta.setSaldo(cuenta.getSaldo() - monto);
-		cuenta.agregarMovimientos("Extraccion");
+	//metodo plantilla 
+	public void extraer(int monto) {
+		if (this.puedeExtrar(monto)) {
+			this.setSaldo(this.getSaldo() - monto);
+			this.agregarMovimientos("Extracccion");
+		}
+		
 	}
 	
-	public abstract void extraer(int monto);
+	//hook method
+	public abstract boolean puedeExtrar(int monto);
 	
 }

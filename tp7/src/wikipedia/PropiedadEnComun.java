@@ -1,27 +1,27 @@
 package wikipedia;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 
-public class PropiedadEnComun extends Wikipedia{
-	
-	public PropiedadEnComun(String title, List<Wikipediapage> links, Map<String, Wikipediapage> infobox) {
-		super(title, links, infobox);
-		// TODO Auto-generated constructor stub
-	}
+public class PropiedadEnComun extends Filtro{
 
-	public List<Wikipediapage> getSimilarPages(Wikipediapage page, List<Wikipediapage> wikipedia){
-		ArrayList<Wikipediapage> paginasSimilares = new ArrayList<Wikipediapage>();
-		for (Wikipediapage p: wikipedia) {
-			if (page.getInfoBox().get(p) == p.getInfoBox().get(p)) {
-					paginasSimilares.add(p);
-			}
+	@Override
+	public boolean esFiltrable(Wikipediapage page, Wikipediapage wikipage) {
+		ArrayList<String> infobox = new ArrayList<String>();
+		infobox.addAll(page.getInfoBox().keySet());
+		
+		boolean propiedadEnComun = wikipage.getInfoBox().keySet().contains(infobox.get(0));
+		infobox.remove(0);
+		
+		while(!propiedadEnComun && !infobox.isEmpty()){
+			propiedadEnComun = wikipage.getInfoBox().keySet().contains(infobox.get(0));
+			infobox.remove(0);
 		}
-		return paginasSimilares;
-	}
+		
+		return propiedadEnComun;
 		
 	}
 	
+
+}
 

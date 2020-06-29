@@ -56,7 +56,15 @@ public abstract class Empleado {
 	public void setCasado(boolean casado) {
 		this.casado = casado;
 	}
-
+	
+	// TEMPLATE METHOD
+	
+	public double sueldoDeEmpleado() {
+		return this.sueldo();
+	}
+	
+	
+	// Hook Method.
 	public abstract Integer sueldo();
 	
 

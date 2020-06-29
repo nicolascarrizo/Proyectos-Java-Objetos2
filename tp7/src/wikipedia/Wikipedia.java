@@ -1,21 +1,22 @@
 package wikipedia;
 
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 
 public class Wikipedia implements Wikipediapage{
 	
 	private String title;
-	private List<Wikipediapage> links;
-	private Map<String, Wikipediapage> infobox;
+	private ArrayList<Wikipediapage> links;
+	private HashMap<String, Wikipediapage> infobox;
 	
 	
 
-	public Wikipedia(String title, List<Wikipediapage> links, Map<String, Wikipediapage> infobox) {
-		super();
+	public Wikipedia(String title) {
 		this.title = title;
-		this.links = links;
-		this.infobox = infobox;
+		this.links = new ArrayList<Wikipediapage>();
+		this.infobox = new HashMap<String, Wikipediapage>();
+		
 	}
 
 	@Override
@@ -25,31 +26,23 @@ public class Wikipedia implements Wikipediapage{
 	}
 
 	@Override
-	public List<Wikipediapage> getLink() {
+	public ArrayList<Wikipediapage> getLink() {
 		// TODO Auto-generated method stub
 		return links;
 	}
 
 	@Override
-	public Map<String, Wikipediapage> getInfoBox() {
+	public HashMap<String, Wikipediapage> getInfoBox() {
 		// TODO Auto-generated method stub
 		return infobox;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public void setLinks(List<Wikipediapage> links) {
-		this.links = links;
-	}
-
-	public void setInfobox(Map<String, Wikipediapage> infobox) {
-		this.infobox = infobox;
 	}
 	
 	public void agregarLink(Wikipediapage page) {
 		links.add(page);
+	}
+	
+	public void agregarEnInfoBox(String propiedadK, Wikipediapage propiedadV) {
+		this.infobox.putIfAbsent(propiedadK, propiedadV);
 	}
 	
 	

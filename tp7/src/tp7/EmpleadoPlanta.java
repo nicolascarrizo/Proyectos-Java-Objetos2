@@ -8,6 +8,7 @@ public class EmpleadoPlanta extends Empleado{
 		// TODO Auto-generated constructor stub
 	}
 
+	//metodo concreto
 	@Override
 	public Integer sueldo() {
 		return ((this.getSueldoBasico() + (150 * this.getCantHijos())) * 13) / 100;

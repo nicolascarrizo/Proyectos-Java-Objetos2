@@ -6,10 +6,13 @@ public class LlamadaDescuento extends LlamadaTelefonica{
 		super(tiempo, horaDelDia);
 	}
 	
+	// METODO CONCRETO
 	@Override
 	public boolean esHoraPico() {
 		return false;
 	}
+	
+	// METODO CONCRETO
 	@Override
 	public float costoNeto(){
 		return this.getTiempo()*0.95f;

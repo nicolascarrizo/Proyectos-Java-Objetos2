@@ -1,13 +1,16 @@
 package wikipedia;
 
-import java.util.List;
-import java.util.Map;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
 
 public interface Wikipediapage {
 
 	public String getTitle();
 	
-	public List<Wikipediapage> getLink();
+	public ArrayList<Wikipediapage> getLink();
 	
-	public Map<String, Wikipediapage> getInfoBox();
+	public HashMap<String, Wikipediapage> getInfoBox();
 }

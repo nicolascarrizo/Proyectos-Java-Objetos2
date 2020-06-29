@@ -1,6 +1,7 @@
 package cuentaBancaria;
 
 public class CajaDeAhorro extends CuentaBancaria {
+	
 	 private int limite;
 	 
 	 public CajaDeAhorro(String titular, int limite){
@@ -12,10 +13,11 @@ public class CajaDeAhorro extends CuentaBancaria {
 		 return this.limite;
 	 }
 	 
+	 //operacion concreta 
 	 @Override
-	 public void extraer(int monto) {
-		 if(this.getSaldo()>=monto && this.getLimite()>=monto){
-			 this.hacerMovimiento(this, monto);
+	 public boolean puedeExtrar(int monto) {
+		 return (this.getSaldo() >= monto && this.getLimite() >= monto);
 		 }
-	 }
 }
+
+

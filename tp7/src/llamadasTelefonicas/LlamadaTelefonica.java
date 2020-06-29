@@ -15,10 +15,12 @@ public abstract class LlamadaTelefonica {
 		return this.horaDelDia;
 	}
 	
-	//HACER ABSTRACT ES UNA FORMA DE IMPLEMENTAR EL TEMPLATE METHOD
+	
+	// HOOK METHOD 
 	public abstract boolean esHoraPico();
 
-
+	
+	// METODO PLANTILLA 
 	public float costoFinal(){
 		if(this.esHoraPico()){
 			return this.costoNeto()*1.2f*this.getTiempo();

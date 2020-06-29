@@ -8,7 +8,8 @@ public class EmpleadoTemporario extends Empleado{
 		super(horasDeTrabajo, sueldoBasico, hijos, casado, cantHijos);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	// metodo concreto
 	@Override
 	public Integer sueldo() {
 		return ((((5 * this.getHorasDeTrabajo()) + this.getSueldoBasico() + this.tieneFamilia()) * 13) / 100);

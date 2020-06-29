@@ -6,6 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import mercado.Caja;
+import mercado.Impuesto;
+import mercado.ProductoCooperativa;
+import mercado.ProductoTradicional;
+import mercado.Servicio;
+
 
 class CajaTest {
 	
