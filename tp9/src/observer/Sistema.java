@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Sistema implements Observable{
 	
+	// subject - SUJETO -- Sujeto concreto
+	
 	private List<Observer> investigadores;
 	private List<Articulo> artiuculos;
 	
@@ -18,6 +20,7 @@ public class Sistema implements Observable{
 	
 	public void agregarNuevoArticulo(Articulo articulo) {
 		this.artiuculos.add(articulo);
+		// notificar a todos los observadores 
 		this.notificarInvestigador(articulo);
 	}
 	
@@ -40,6 +43,7 @@ public class Sistema implements Observable{
 	@Override
 	public void notificarInvestigador(Articulo articulo) {
 		for(Observer observer : investigadores){
+			//update , actualiza los estados 
 			observer.cargarNuevoArticulo(articulo);
 			
 		}

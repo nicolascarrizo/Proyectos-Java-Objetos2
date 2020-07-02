@@ -1,9 +1,10 @@
-package tp9;
+package shape;
 
 import java.util.List;
 
 public interface IShapeShifter {
 	
+	// este es mi componente 
 	
 	public IShapeShifter compose(IShapeShifter ishapeShifter);
 	

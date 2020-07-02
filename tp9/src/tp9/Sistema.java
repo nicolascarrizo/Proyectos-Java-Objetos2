@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Sistema {
 	
+	// componente
 	// el cliente que maneja el componente
 	
 	private ArrayList<Cultivo> tierra;

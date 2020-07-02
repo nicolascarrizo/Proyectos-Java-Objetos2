@@ -32,9 +32,20 @@ public class RegionSubdividida extends Cultivo{
 		cultivos.add(cultivo);
 	}
 	
+
+
+	@Override
+	public void eliminarCultivo(Cultivo cultivo) {
+		if(this.cultivos.contains(cultivo)) {
+			this.cultivos.remove(cultivo);
+		}
+		
+	}
+	
 	public ArrayList<Cultivo> getCultivos(){
 		return cultivos;
 	}
+
 	
 	
 

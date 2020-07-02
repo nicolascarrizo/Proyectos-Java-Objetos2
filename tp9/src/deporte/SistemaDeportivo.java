@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class SistemaDeportivo {
+	
+	// esta es mi clase sujeto 
+	
 	private List<Partido> listPartidos;
 			// contricante
 			// deporte
@@ -22,6 +25,7 @@ public class SistemaDeportivo {
 		this.notificarContricantes(partido, partido.getContrincantes());
 		
 	}
+	
 
 	private void notificarContricantes(Partido partido, List<String> contrincantes) {
 		for (String string : contrincantes) {
@@ -40,12 +44,14 @@ public class SistemaDeportivo {
 		}
 	}
 	
-	
 	private void notificarServidor(ArrayList<Observer> servidores, Partido partido, String depocont) {
 		for(Observer servidor : servidores) {
+			//update, actualiza los estados 
 			servidor.cargar(partido, depocont);
 		}
 	}
+	
+
 	
 	public void agregarServidor(Observer servidor, String depocont) {
 		if(this.servidoresSubscriptos.get(depocont) == null) {

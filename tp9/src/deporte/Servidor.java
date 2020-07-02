@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Servidor implements Observer{
 	
+	// esta es mi clase observadora
+	
 	private List<String> intereses;
 	private List<Partido> partidos;
 	

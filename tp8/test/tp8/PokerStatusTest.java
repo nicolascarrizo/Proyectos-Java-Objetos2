@@ -45,6 +45,8 @@ class PokerStatusTest {
 	public void setUp() {
 		
 		//para poker
+		
+		//SUT
 		mano = new PokerStatus();
 		
 		carta1 = new Carta("P", 1);
@@ -146,7 +148,7 @@ class PokerStatusTest {
 		Carta cartaK1 = mock(Carta.class);
 		Carta cartaL2 = mock(Carta.class);
 		
-		when(cartaT8.getValor()).thenReturn(8);
+		when(cartaT8.getValor()).thenReturn(8); //esto le retorna un valor puesto por ejemplo: retorna que cartaT8 sea la numero 8 
 		when(cartaQ8.getValor()).thenReturn(8);
 		when(cartaK8.getValor()).thenReturn(8);
 		when(cartaK1.getValor()).thenReturn(1);
